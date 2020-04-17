@@ -7,7 +7,7 @@
   </div>
 {% else %}
   <a class='btn btn-default' href="{% url 'post_publish' pk=post.pk %}">Publish</a>
-{% end if %}
+{% endif %}
 
 <p class='postcontent'{{post.title|safe|linebreaksbr}}></p>
 
@@ -21,6 +21,7 @@
 {% endif %}
 
 <hr>
+
 <a class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
 <div class="container">
   {% for comment in post.comments.all %}
